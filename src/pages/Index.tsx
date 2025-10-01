@@ -55,21 +55,21 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <nav className="border-b border-border/40 backdrop-blur-sm bg-background/80 sticky top-0 z-50">
+      <nav className="border-b border-primary/30 backdrop-blur-sm bg-background/90 sticky top-0 z-50 neon-border">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-tech flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-gradient-tech flex items-center justify-center animate-pulse-glow">
                 <Icon name="GraduationCap" className="text-white" size={24} />
               </div>
-              <span className="text-2xl font-bold font-poppins">NEXTGENCODE</span>
+              <span className="text-2xl font-bold font-poppins text-gradient">NEXTGENCODE</span>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a href="#courses" className="text-sm font-medium hover:text-primary transition-colors">Курсы</a>
               <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">О школе</a>
               <a href="#contacts" className="text-sm font-medium hover:text-primary transition-colors">Контакты</a>
             </div>
-            <Button className="bg-gradient-tech text-white hover:opacity-90">
+            <Button className="bg-gradient-tech text-white hover:opacity-90 neon-glow hover:scale-105 transition-all">
               Записаться
             </Button>
           </div>
@@ -78,24 +78,25 @@ const Index = () => {
 
       <section className="relative overflow-hidden py-20 md:py-32">
         <div className="absolute inset-0 circuit-pattern opacity-30"></div>
-        <div className="absolute top-20 right-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-10 w-64 h-64 bg-primary/40 rounded-full blur-3xl animate-pulse-glow"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/40 rounded-full blur-3xl animate-pulse-glow" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-secondary/30 rounded-full blur-3xl animate-pulse-glow" style={{animationDelay: '0.5s'}}></div>
         
-        <div className="absolute top-32 left-1/4 w-12 h-12 border-2 border-primary/30 rounded-lg animate-float" style={{animationDelay: '0s'}}></div>
-        <div className="absolute top-48 right-1/3 w-8 h-8 border-2 border-accent/30 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-32 right-1/4 w-10 h-10 border-2 border-primary/30 rotate-45 animate-float" style={{animationDelay: '0.5s'}}></div>
-        <div className="absolute top-40 left-1/3 text-4xl opacity-20 animate-float" style={{animationDelay: '1.5s'}}>{'</>'}</div>
-        <div className="absolute bottom-40 right-1/3 text-3xl opacity-20 animate-float" style={{animationDelay: '2s'}}>{'{ }'}</div>
+        <div className="absolute top-32 left-1/4 w-12 h-12 border-2 border-primary neon-border rounded-lg animate-float" style={{animationDelay: '0s'}}></div>
+        <div className="absolute top-48 right-1/3 w-8 h-8 border-2 border-accent neon-border rounded-full animate-float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-32 right-1/4 w-10 h-10 border-2 border-secondary neon-border rotate-45 animate-float" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute top-40 left-1/3 text-4xl text-primary opacity-60 animate-float" style={{animationDelay: '1.5s', textShadow: '0 0 20px rgba(168, 85, 247, 0.8)'}}>{'</>'}</div>
+        <div className="absolute bottom-40 right-1/3 text-3xl text-accent opacity-60 animate-float" style={{animationDelay: '2s', textShadow: '0 0 20px rgba(236, 72, 153, 0.8)'}}>{'{ }'}</div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              <Icon name="Zap" size={16} />
+<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary text-sm font-medium mb-6 neon-border backdrop-blur-sm">
+              <Icon name="Zap" size={16} className="animate-pulse" />
               <span>Онлайн школа программирования</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold font-poppins mb-6 leading-tight">
-              Учим детей <span className="text-gradient">создавать будущее</span>
+              Учим детей <span className="text-gradient glow-text">создавать будущее</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -103,11 +104,11 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button size="lg" className="bg-gradient-tech text-white hover:opacity-90 text-lg px-8">
+              <Button size="lg" className="bg-gradient-tech text-white hover:opacity-90 text-lg px-8 neon-glow hover:scale-105 transition-all">
                 <Icon name="Play" size={20} className="mr-2" />
                 Начать обучение
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8">
+              <Button size="lg" variant="outline" className="text-lg px-8 border-2 border-primary hover:bg-primary/20 neon-border backdrop-blur-sm hover:scale-105 transition-all">
                 <Icon name="Calendar" size={20} className="mr-2" />
                 Бесплатный урок
               </Button>
@@ -138,7 +139,7 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-20 animate-fade-in">
             <h2 className="text-4xl md:text-6xl font-bold font-poppins mb-6">
-              Выбери свой <span className="text-gradient">путь в IT</span>
+              Выбери свой <span className="text-gradient glow-text">путь в IT</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Каждый курс — это увлекательное приключение в мир технологий
@@ -152,8 +153,8 @@ const Index = () => {
                 className="group relative animate-fade-in"
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <div className="absolute -inset-1 bg-gradient-tech rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
-                <div className="relative bg-card border-2 border-border hover:border-primary/50 rounded-2xl p-8 md:p-10 transition-all duration-300 hover:shadow-2xl">
+                <div className="absolute -inset-1 bg-gradient-tech rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500 neon-glow"></div>
+                <div className="relative bg-card border-2 border-border hover:border-primary rounded-2xl p-8 md:p-10 transition-all duration-300 hover:shadow-2xl hover:neon-border backdrop-blur-sm">
                   <div className="flex flex-col md:flex-row gap-8 items-start">
                     <div className="flex-shrink-0">
                       <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-gradient-tech flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -196,7 +197,7 @@ const Index = () => {
                         </div>
                       </div>
 
-                      <Button size="lg" className="bg-gradient-tech text-white hover:opacity-90 hover:scale-105 transition-all">
+                      <Button size="lg" className="bg-gradient-tech text-white hover:opacity-90 hover:scale-105 transition-all neon-glow">
                         Узнать больше
                         <Icon name="ArrowRight" size={20} className="ml-2 group-hover:translate-x-2 transition-transform" />
                       </Button>
@@ -209,10 +210,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-muted/10 relative overflow-hidden">
+        <div className="absolute inset-0 circuit-pattern opacity-20"></div>
+        <div className="absolute top-10 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse-glow"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse-glow" style={{animationDelay: '1s'}}></div>
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold font-poppins mb-4">Почему NEXTGENCODE?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold font-poppins mb-4">Почему <span className="text-gradient">NEXTGENCODE</span>?</h2>
             <p className="text-lg text-muted-foreground">
               Современный подход к обучению программированию
             </p>
@@ -222,10 +226,10 @@ const Index = () => {
             {features.map((feature, index) => (
               <Card 
                 key={index} 
-                className="p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in"
+                className="p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-2 animate-fade-in border-2 border-border hover:border-primary hover:neon-border backdrop-blur-sm bg-card/80"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-tech flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-tech flex items-center justify-center mx-auto mb-4 group-hover:animate-pulse-glow">
                   <Icon name={feature.icon as any} className="text-white" size={32} />
                 </div>
                 <h3 className="text-xl font-bold font-poppins mb-2">{feature.title}</h3>
@@ -237,17 +241,18 @@ const Index = () => {
       </section>
 
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 circuit-pattern opacity-20"></div>
+        <div className="absolute inset-0 circuit-pattern opacity-30"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/20 opacity-50"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <Card className="max-w-4xl mx-auto p-12 text-center bg-gradient-tech border-0">
-            <Icon name="Sparkles" className="text-white mx-auto mb-6" size={48} />
-            <h2 className="text-4xl md:text-5xl font-bold font-poppins text-white mb-6">
+          <Card className="max-w-4xl mx-auto p-12 text-center bg-gradient-tech border-0 neon-glow">
+            <Icon name="Sparkles" className="text-white mx-auto mb-6 animate-pulse" size={48} />
+            <h2 className="text-4xl md:text-5xl font-bold font-poppins text-white mb-6 glow-text">
               Готовы начать путь в IT?
             </h2>
             <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
               Запишитесь на бесплатный пробный урок и откройте для ребенка мир программирования
             </p>
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8">
+            <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8 hover:scale-110 transition-all shadow-2xl">
               <Icon name="MessageCircle" size={20} className="mr-2" />
               Записаться на пробный урок
             </Button>
