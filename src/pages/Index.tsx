@@ -81,6 +81,12 @@ const Index = () => {
         <div className="absolute top-20 right-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
         
+        <div className="absolute top-32 left-1/4 w-12 h-12 border-2 border-primary/30 rounded-lg animate-float" style={{animationDelay: '0s'}}></div>
+        <div className="absolute top-48 right-1/3 w-8 h-8 border-2 border-accent/30 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-32 right-1/4 w-10 h-10 border-2 border-primary/30 rotate-45 animate-float" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute top-40 left-1/3 text-4xl opacity-20 animate-float" style={{animationDelay: '1.5s'}}>{'</>'}</div>
+        <div className="absolute bottom-40 right-1/3 text-3xl opacity-20 animate-float" style={{animationDelay: '2s'}}>{'{ }'}</div>
+        
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
@@ -127,58 +133,77 @@ const Index = () => {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
       </section>
 
-      <section id="courses" className="py-20 relative">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
-              <Icon name="BookOpen" size={16} />
-              <span>Образовательные программы</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold font-poppins mb-4">Наши курсы</h2>
+      <section id="courses" className="py-24 relative bg-gradient-to-b from-background to-muted/20">
+        <div className="absolute inset-0 circuit-pattern opacity-10"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-20 animate-fade-in">
+            <h2 className="text-4xl md:text-6xl font-bold font-poppins mb-6">
+              Выбери свой <span className="text-gradient">путь в IT</span>
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Программы разработаны с учетом возраста и подготовки ребенка
+              Каждый курс — это увлекательное приключение в мир технологий
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto space-y-8">
             {courses.map((course, index) => (
-              <Card 
-                key={index} 
-                className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/50 group animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+              <div
+                key={index}
+                className="group relative animate-fade-in"
+                style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <div className="w-14 h-14 rounded-xl bg-gradient-tech flex items-center justify-center mb-4 group-hover:animate-float">
-                  <Icon name={course.icon as any} className="text-white" size={28} />
-                </div>
-                
-                <div className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold mb-3">
-                  {course.age}
-                </div>
-                
-                <h3 className="text-2xl font-bold font-poppins mb-3 group-hover:text-primary transition-colors">
-                  {course.title}
-                </h3>
-                
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {course.description}
-                </p>
+                <div className="absolute -inset-1 bg-gradient-tech rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500"></div>
+                <div className="relative bg-card border-2 border-border hover:border-primary/50 rounded-2xl p-8 md:p-10 transition-all duration-300 hover:shadow-2xl">
+                  <div className="flex flex-col md:flex-row gap-8 items-start">
+                    <div className="flex-shrink-0">
+                      <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-gradient-tech flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Icon name={course.icon as any} className="text-white" size={40} />
+                      </div>
+                    </div>
+                    
+                    <div className="flex-1">
+                      <div className="flex flex-wrap items-center gap-3 mb-4">
+                        <h3 className="text-3xl md:text-4xl font-bold font-poppins group-hover:text-gradient transition-colors">
+                          {course.title}
+                        </h3>
+                        <span className="px-4 py-1.5 rounded-full bg-gradient-tech text-white text-sm font-semibold">
+                          {course.age}
+                        </span>
+                      </div>
+                      
+                      <p className="text-lg text-muted-foreground mb-6 leading-relaxed max-w-3xl">
+                        {course.description}
+                      </p>
 
-                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6 pb-6 border-b border-border">
-                  <div className="flex items-center gap-1">
-                    <Icon name="Clock" size={16} />
-                    <span>{course.duration}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Icon name="Signal" size={16} />
-                    <span>{course.level}</span>
+                      <div className="flex flex-wrap gap-6 mb-6">
+                        <div className="flex items-center gap-2 text-sm">
+                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <Icon name="Clock" size={18} className="text-primary" />
+                          </div>
+                          <div>
+                            <div className="text-xs text-muted-foreground">Длительность</div>
+                            <div className="font-semibold">{course.duration}</div>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm">
+                          <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                            <Icon name="Signal" size={18} className="text-accent" />
+                          </div>
+                          <div>
+                            <div className="text-xs text-muted-foreground">Уровень</div>
+                            <div className="font-semibold">{course.level}</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <Button size="lg" className="bg-gradient-tech text-white hover:opacity-90 hover:scale-105 transition-all">
+                        Узнать больше
+                        <Icon name="ArrowRight" size={20} className="ml-2 group-hover:translate-x-2 transition-transform" />
+                      </Button>
+                    </div>
                   </div>
                 </div>
-
-                <Button className="w-full bg-gradient-tech text-white hover:opacity-90 group-hover:shadow-lg">
-                  Подробнее
-                  <Icon name="ArrowRight" size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
